@@ -2,6 +2,8 @@
 #include "./ui_mainwindow.h"
 #include <functional>
 #include <sqlite3.h>
+#include <QFile>
+#include <QTextStream>
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -10,6 +12,11 @@ MainWindow::MainWindow(QWidget *parent)
 	ui->setupUi(this);
 	connect(
 		ui->pushButton, &QPushButton::clicked, this, &MainWindow::sqlite_test);
+	QFile file("resource/qss/public_svg.qss");
+	if (file.open(QIODevice::ReadOnly)) {
+		QTextStream in(&file);
+		setStyleSheet(in.readAll());
+	}
 }
 
 MainWindow::~MainWindow() { delete ui; }
