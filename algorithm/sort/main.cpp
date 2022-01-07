@@ -1,6 +1,8 @@
+#include <random>
+#include <algorithm>
+#include <iterator>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 #include "quick_sort/quick_sort.hpp"
 #include "merge_sort/merge_sort.hpp"
@@ -16,8 +18,12 @@
 void
 sort()
 {
-	std::vector<int> nums = {
-		1, 3, 5, 7, 2, 6, 4, 8, 9, 2, 8, 7, 6, 0, 3, 5, 9, 4, 1, 0};
+	// init vector with random
+	std::random_device rd;
+	std::mt19937 g(rd());
+	std::vector<int> nums(10);
+	std::generate(nums.begin(), nums.end(), [&]() { return g() % 100; });
+
 	std::vector<int> temp(nums.size());
 
 	std::random_shuffle(nums.begin(), nums.end());
