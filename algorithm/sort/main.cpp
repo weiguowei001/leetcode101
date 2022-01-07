@@ -8,17 +8,32 @@
 #include "bubble_sort/bubble_sort.hpp"
 #include "selection_sort/selection_sort.hpp"
 
+#define PRINT                                                                  \
+	std::copy(                                                                 \
+		nums.begin(), nums.end(), std::ostream_iterator<int>(std::cout, " ")); \
+	std::cout << "\n";
+
 void
 sort()
 {
 	std::vector<int> nums = {
 		1, 3, 5, 7, 2, 6, 4, 8, 9, 2, 8, 7, 6, 0, 3, 5, 9, 4, 1, 0};
-	// std::sort(nums.begin(), nums.end());
-	quick_sort(nums, 0, nums.size());
-	for (auto num : nums) {
-		std::cout << num << " ";
-	}
-	std::cout << "\n";
+	std::vector<int> temp(nums.size());
+
+	std::random_shuffle(nums.begin(), nums.end());
+	PRINT
+	std::sort(nums.begin(), nums.end());
+	PRINT
+
+	std::random_shuffle(nums.begin(), nums.end());
+	PRINT
+	quick_sort(nums, 0, static_cast<int>(nums.size()));
+	PRINT
+
+	std::random_shuffle(nums.begin(), nums.end());
+	PRINT
+	merge_sort(nums, 0, static_cast<int>(nums.size()), temp);
+	PRINT
 }
 
 int
