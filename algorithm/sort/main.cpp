@@ -18,12 +18,12 @@
 void
 sort()
 {
-	// init vector with random
+	// use random device to initiate vector
 	std::random_device rd;
 	std::mt19937 g(rd());
-	std::vector<int> nums(10);
-	std::generate(nums.begin(), nums.end(), [&]() { return g() % 100; });
-
+	std::vector<int> nums;
+	std::generate_n(
+		std::inserter(nums, nums.end()), 5, [&]() -> int { return g() % 100; });
 	std::vector<int> temp(nums.size());
 
 	std::random_shuffle(nums.begin(), nums.end());
