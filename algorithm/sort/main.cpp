@@ -23,7 +23,7 @@ sort()
 	std::mt19937 g(rd());
 	std::vector<int> nums;
 	std::generate_n(
-		std::inserter(nums, nums.end()), 5, [&]() -> int { return g() % 100; });
+		std::inserter(nums, nums.end()), 10, [&]() -> int { return g() % 100; });
 	std::vector<int> temp(nums.size());
 
 	std::random_shuffle(nums.begin(), nums.end());
@@ -40,6 +40,13 @@ sort()
 	PRINT
 	merge_sort(nums, 0, static_cast<int>(nums.size()), temp);
 	PRINT
+
+	std::random_shuffle(nums.begin(), nums.end());
+	PRINT
+	insertion_sort(nums, static_cast<int>(nums.size()));
+	PRINT
+
+	std::cout << "\033[1;31mbold red text\033[0m\n";
 }
 
 int
