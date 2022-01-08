@@ -51,6 +51,11 @@ sort()
 	bubble_sort(nums, static_cast<int>(nums.size()));
 	PRINT
 
+	std::random_shuffle(nums.begin(), nums.end());
+	PRINT
+	bubble_sort(nums, static_cast<int>(nums.size()));
+	PRINT
+	
 	std::cout << "\033[1;31mbold red text\033[0m\n";
 }
 
