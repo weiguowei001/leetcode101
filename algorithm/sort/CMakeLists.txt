@@ -4,6 +4,8 @@ project(sort)
 
 set(SORT_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/main.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/topk.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/topk.hpp
     ${CMAKE_CURRENT_LIST_DIR}/quick_sort/quick_sort.hpp
     ${CMAKE_CURRENT_LIST_DIR}/quick_sort/quick_sort.cpp
     ${CMAKE_CURRENT_LIST_DIR}/bubble_sort/bubble_sort.hpp

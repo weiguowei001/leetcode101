@@ -9,6 +9,7 @@
 #include "insertion_sort/insertion_sort.hpp"
 #include "bubble_sort/bubble_sort.hpp"
 #include "selection_sort/selection_sort.hpp"
+#include "topk.hpp"
 
 #define PRINT                                                                  \
 	std::copy(                                                                 \
@@ -22,8 +23,8 @@ sort()
 	std::random_device rd;
 	std::mt19937 g(rd());
 	std::vector<int> nums;
-	std::generate_n(
-		std::inserter(nums, nums.end()), 10, [&]() -> int { return g() % 100; });
+	std::generate_n(std::inserter(nums, nums.end()), 10,
+		[&]() -> int { return g() % 100; });
 	std::vector<int> temp(nums.size());
 
 	std::random_shuffle(nums.begin(), nums.end());
@@ -55,7 +56,7 @@ sort()
 	PRINT
 	bubble_sort(nums, static_cast<int>(nums.size()));
 	PRINT
-	
+
 	std::cout << "\033[1;31mbold red text\033[0m\n";
 }
 
@@ -64,5 +65,7 @@ main()
 {
 	std::cout << "Hello World\n";
 	sort();
+
+	topKFrequent(std::vector<int>{1, 1, 1, 1, 7, 7, 3}, 2);
 	return 0;
 }
