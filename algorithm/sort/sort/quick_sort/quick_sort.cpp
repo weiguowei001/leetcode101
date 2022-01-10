@@ -2,6 +2,9 @@
 
 #include "quick_sort.hpp"
 
+namespace algorithm {
+namespace sort {
+
 void
 quick_sort(std::vector<int> &nums, int l, int r)
 {
@@ -19,7 +22,10 @@ quick_sort(std::vector<int> &nums, int l, int r)
 		}
 		nums[last] = nums[first];
 	}
-    nums[first] = key;
+	nums[first] = key;
 	quick_sort(nums, l, first);
 	quick_sort(nums, first + 1, r);
 }
+
+} // namespace sort
+} // namespace algorithm

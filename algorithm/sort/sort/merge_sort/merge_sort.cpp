@@ -2,6 +2,9 @@
 
 #include "merge_sort.hpp"
 
+namespace algorithm {
+namespace sort {
+
 void
 merge_sort(std::vector<int> &nums, int l, int r, std::vector<int> &temp)
 {
@@ -25,3 +28,6 @@ merge_sort(std::vector<int> &nums, int l, int r, std::vector<int> &temp)
 		nums[i] = temp[i];
 	}
 }
+
+} // namespace sort
+} // namespace algorithm

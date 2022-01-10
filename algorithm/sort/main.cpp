@@ -4,12 +4,17 @@
 #include <iostream>
 #include <vector>
 
-#include "quick_sort/quick_sort.hpp"
-#include "merge_sort/merge_sort.hpp"
-#include "insertion_sort/insertion_sort.hpp"
-#include "bubble_sort/bubble_sort.hpp"
-#include "selection_sort/selection_sort.hpp"
-#include "topk.hpp"
+#include "sort/quick_sort/quick_sort.hpp"
+#include "sort/merge_sort/merge_sort.hpp"
+#include "sort/insertion_sort/insertion_sort.hpp"
+#include "sort/bubble_sort/bubble_sort.hpp"
+#include "sort/selection_sort/selection_sort.hpp"
+#include "sort/topk.hpp"
+
+#include "search/search.hpp"
+
+using namespace algorithm::sort;
+using namespace algorithm::search;
 
 #define PRINT                                                                  \
 	std::copy(                                                                 \

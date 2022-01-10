@@ -2,6 +2,8 @@
 
 #include <unordered_map>
 #include <utility>
+namespace algorithm {
+namespace sort {
 
 std::vector<int>
 topKFrequent(std::vector<int> &nums, int k)
@@ -29,3 +31,6 @@ topKFrequent(std::vector<int> &nums, int k)
 
 	return ans;
 }
+
+} // namespace sort
+} // namespace algorithm

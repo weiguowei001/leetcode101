@@ -1,6 +1,9 @@
 #include "bubble_sort.hpp"
 #include <utility>
 
+namespace algorithm {
+namespace sort {
+
 void
 bubble_sort(std::vector<int> &nums, int n)
 {
@@ -19,3 +22,6 @@ bubble_sort(std::vector<int> &nums, int n)
 		}
 	}
 }
+
+} // namespace sort
+} // namespace algorithm
