@@ -32,35 +32,46 @@ sort()
 		[&]() -> int { return g() % 100; });
 	std::vector<int> temp(nums.size());
 
-	std::random_shuffle(nums.begin(), nums.end());
+	std::shuffle(nums.begin(), nums.end(), g);
 	PRINT
 	std::sort(nums.begin(), nums.end());
 	PRINT
 
-	std::random_shuffle(nums.begin(), nums.end());
+	std::shuffle(nums.begin(), nums.end(), g);
 	PRINT
 	quick_sort(nums, 0, static_cast<int>(nums.size()));
 	PRINT
 
-	std::random_shuffle(nums.begin(), nums.end());
+	std::shuffle(nums.begin(), nums.end(), g);
 	PRINT
 	merge_sort(nums, 0, static_cast<int>(nums.size()), temp);
 	PRINT
 
-	std::random_shuffle(nums.begin(), nums.end());
+	std::shuffle(nums.begin(), nums.end(), g);
 	PRINT
 	insertion_sort(nums, static_cast<int>(nums.size()));
 	PRINT
 
-	std::random_shuffle(nums.begin(), nums.end());
+	std::shuffle(nums.begin(), nums.end(), g);
 	PRINT
 	bubble_sort(nums, static_cast<int>(nums.size()));
 	PRINT
 
-	std::random_shuffle(nums.begin(), nums.end());
+	std::shuffle(nums.begin(), nums.end(), g);
 	PRINT
 	bubble_sort(nums, static_cast<int>(nums.size()));
 	PRINT
+
+	std::vector<std::vector<int> > grid = {
+		{0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+		{0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0},
+		{0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}};
+	std::cout << "maxAreaOfIsLand" << maxAreaOfIsLand(grid) << "\n";
 
 	std::cout << "\033[1;31mbold red text\033[0m\n";
 }
