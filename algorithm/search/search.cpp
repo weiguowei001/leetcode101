@@ -11,7 +11,8 @@ std::vector<int> direction{-1, 0, 1, 0, -1};
 int
 maxAreaOfIsLand(std::vector<std::vector<int> > &grid)
 {
-	size_t m = grid.size(), n = m ? grid[0].size() : 0, local_area, area = 0, x, y;
+	size_t m = grid.size(), n = m ? grid[0].size() : 0, local_area, area = 0, x,
+		   y;
 	for (int i = 0; i < m; ++i) {
 		for (int j = 0; j < n; ++j) {
 			if (grid[i][j]) {
