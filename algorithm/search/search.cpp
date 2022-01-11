@@ -1,4 +1,4 @@
-#include "search.hpp"
+﻿#include "search.hpp"
 
 #include <stack>
 #include <utility>
@@ -59,7 +59,7 @@ namespace recursive {
 
 // 辅助函数
 int
-dfs(std::vector<std::vector<int> > &grid, int r, int c)
+dfs_1(std::vector<std::vector<int> > &grid, int r, int c)
 {
 	if (grid[r][c] == 0)
 		return 0;
@@ -68,7 +68,7 @@ dfs(std::vector<std::vector<int> > &grid, int r, int c)
 	for (int i = 0; i < 4; ++i) {
 		x = r + direction[i], y = c + direction[i + 1];
 		if (x >= 0 && x < grid.size() && y >= 0 && y < grid[0].size()) {
-			area += dfs(grid, x, y);
+			area += dfs_1(grid, x, y);
 		}
 	}
 	return area;
@@ -76,19 +76,47 @@ dfs(std::vector<std::vector<int> > &grid, int r, int c)
 
 // 主函数
 int
-maxAreaOfIsLand(std::vector<std::vector<int> > &grid)
+maxAreaOfIsLand_1(std::vector<std::vector<int> > &grid)
 {
 	if (grid.empty() || grid[0].empty())
 		return 0;
 	int max_area = 0;
 	for (int i = 0; i < grid.size(); ++i) {
-		for(int j = 0; j < grid[0].size(); ++j) {
+		for (int j = 0; j < grid[0].size(); ++j) {
 			if (grid[i][j] == 1) {
-				max_area = std::max(max_area, dfs(grid, i, j));
+				max_area = std::max(max_area, dfs_1(grid, i, j));
 			}
 		}
 	}
 
+	return max_area;
+}
+
+// 辅助函数
+int
+dfs_2(std::vector<std::vector<int> > &grid, int r, int c)
+{
+	if (r < 0 || r >= grid.size() || c < 0 || c >= grid[0].size() ||
+		grid[r][c] == 0) {
+		return 0;
+	}
+	grid[r][c] = 0;
+	return 1 + dfs_2(grid, r + 1, c) + dfs_2(grid, r - 1, c) +
+		   dfs_2(grid, r, c + 1) + dfs_2(grid, r, c - 1);
+}
+
+// 主函数
+int
+maxAreaOfIsLand_2(std::vector<std::vector<int> > &grid)
+{
+	if (grid.empty() || grid[0].empty())
+		return 0;
+	int max_area = 0;
+	for (int i = 0; i < grid.size(); ++i) {
+		for (int j = 0; j < grid[0].size(); ++j) {
+			max_area = std::max(max_area, dfs_2(grid, i, j));
+		}
+	}
 	return max_area;
 }
 

@@ -16,8 +16,11 @@ int maxAreaOfIsLand(std::vector<std::vector<int> > &grid);
 
 namespace recursive {
 
-int dfs(std::vector<std::vector<int> > &grid, int r, int c);
-int maxAreaOfIsLand(std::vector<std::vector<int> > &grid);
+int dfs_1(std::vector<std::vector<int> > &grid, int r, int c);
+int maxAreaOfIsLand_1(std::vector<std::vector<int> > &grid);
+
+int dfs_2(std::vector<std::vector<int> > &grid, int r, int c);
+int maxAreaOfIsLand_2(std::vector<std::vector<int> > &grid);
 
 } // namespace recursive
 

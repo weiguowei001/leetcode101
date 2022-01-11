@@ -74,7 +74,7 @@ sort()
 	std::cout << "stack::maxAreaOfIsLand: "
 			  << stack::maxAreaOfIsLand(grid_stack) << "\n";
 
-	std::vector<std::vector<int> > grid_recurisive = {
+	std::vector<std::vector<int> > grid_recurisive_1 = {
 		{0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
 		{0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
 		{0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -84,8 +84,21 @@ sort()
 		{0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
 		{0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}};
 
-	std::cout << "recurisive::maxAreaOfIsLand: "
-			  << recursive::maxAreaOfIsLand(grid_recurisive) << "\n";
+	std::cout << "recurisive::maxAreaOfIsLand_1: "
+			  << recursive::maxAreaOfIsLand_1(grid_recurisive_1) << "\n";
+
+	std::vector<std::vector<int> > grid_recurisive_2 = {
+		{0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+		{0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0},
+		{0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}};
+
+	std::cout << "recurisive::maxAreaOfIsLand_2: "
+			  << recursive::maxAreaOfIsLand_2(grid_recurisive_2) << "\n";
 
 	std::cout << "\033[1;31mbold red text\033[0m\n";
 }
