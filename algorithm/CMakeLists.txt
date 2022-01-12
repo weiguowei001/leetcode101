@@ -25,3 +25,9 @@ set(SORT_SOURCES
     )
 
 add_executable(sort ${SORT_SOURCES})
+
+###########################################################
+# TESTS
+###########################################################
+
+add_subdirectory(tests)
