@@ -5,7 +5,6 @@
 namespace algorithm {
 namespace search {
 
-int findCircleNum(std::vector<std::vector<int> > &friends);
 std::vector<std::vector<int> > permute(std::vector<int> &nums);
 
 
@@ -20,6 +19,10 @@ int maxAreaOfIsLand_1(std::vector<std::vector<int> > &grid);
 
 int dfs_2(std::vector<std::vector<int> > &grid, int r, int c);
 int maxAreaOfIsLand_2(std::vector<std::vector<int> > &grid);
+
+void dfs_3(
+	std::vector<std::vector<int> > &friends, int i, std::vector<bool> &visited);
+int findCircleNum(std::vector<std::vector<int> > &friends);
 } // namespace recursive
 } // namespace dfs
 

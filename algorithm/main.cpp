@@ -114,6 +114,11 @@ sort()
 	std::cout << "bfs::queue::maxAreaOfIsLand: "
 			  << bfs::queue::maxAreaOfIsLand(grid_bfs_queue) << "\n";
 
+	std::vector<std::vector<int> > friends_dfs_recursive{
+		{1, 1, 0}, {1, 1, 0}, {0, 0, 1}};
+	std::cout << "dfs::recursive::findCircleNum: "
+			  << dfs::recursive::findCircleNum(friends_dfs_recursive) << "\n";
+
 	std::cout << "\033[1;31mbold red text\033[0m\n";
 }
 

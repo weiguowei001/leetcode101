@@ -9,11 +9,6 @@ std::vector<int> direction{-1, 0, 1, 0, -1};
 namespace algorithm {
 namespace search {
 
-int
-findCircleNum(std::vector<std::vector<int> > &friends)
-{
-	return -1;
-}
 
 std::vector<std::vector<int> >
 permute(std::vector<int> &nums)
@@ -125,6 +120,31 @@ maxAreaOfIsLand_2(std::vector<std::vector<int> > &grid)
 	return max_area;
 }
 
+void
+dfs_3(
+	std::vector<std::vector<int> > &friends, int i, std::vector<bool> &visited)
+{
+	visited[i] = true;
+	for (int k = 0; k < friends.size(); ++k) {
+		if (friends[i][k] == 1 && !visited[k]) {
+			dfs_3(friends, k, visited);
+		}
+	}
+}
+
+int
+findCircleNum(std::vector<std::vector<int> > &friends)
+{
+	int n = friends.size(), count = 0;
+	std::vector<bool> visited(n, false);
+	for (int i = 0; i < n; ++i) {
+		if (!visited[i]) {
+			dfs_3(friends, i, visited);
+			++count;
+		}
+	}
+	return count;
+}
 } // namespace recursive
 } // namespace dfs
 
