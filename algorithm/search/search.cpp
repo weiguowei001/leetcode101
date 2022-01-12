@@ -1,6 +1,7 @@
 ﻿#include "search.hpp"
 
 #include <stack>
+#include <queue>
 #include <utility>
 
 std::vector<int> direction{-1, 0, 1, 0, -1};
@@ -20,30 +21,33 @@ permute(std::vector<int> &nums)
 	return std::vector<std::vector<int> >{{}};
 }
 
+namespace dfs {
 namespace stack {
 
 int
 maxAreaOfIsLand(std::vector<std::vector<int> > &grid)
 {
-	size_t m = grid.size(), n = m ? grid[0].size() : 0;
-	int local_area, area = 0;
-	for (int i = 0; i < m; ++i) {
-		for (int j = 0; j < n; ++j) {
+	size_t n = grid.size(), m = n ? grid[0].size() : 0;
+	int area = 0;
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < m; ++j) {
 			if (!grid[i][j]) {
 				continue;
 			}
-			local_area = 1;
-			grid[i][j] = 0;
 			std::stack<std::pair<int, int> > island;
 			island.push({i, j});
+			int local_area = 0;
 			while (!island.empty()) {
 				auto [r, c] = island.top();
 				island.pop();
+				if (!grid[r][c]) {
+					continue;
+				}
+				++local_area;
+				grid[r][c] = 0;
 				for (int k = 0; k < 4; ++k) {
 					int x = r + direction[k], y = c + direction[k + 1];
-					if (x >= 0 && x < m && y >= 0 && y < n && grid[x][y] == 1) {
-						grid[x][y] = 0;
-						++local_area;
+					if (x >= 0 && x < n && y >= 0 && y < m && grid[x][y]) {
 						island.push({x, y});
 					}
 				}
@@ -51,7 +55,7 @@ maxAreaOfIsLand(std::vector<std::vector<int> > &grid)
 			area = std::max(area, local_area);
 		}
 	}
-	return static_cast<int>(area);
+	return area;
 }
 
 } // namespace stack
@@ -122,6 +126,47 @@ maxAreaOfIsLand_2(std::vector<std::vector<int> > &grid)
 }
 
 } // namespace recursive
+} // namespace dfs
+
+namespace bfs {
+namespace queue {
+
+int
+maxAreaOfIsLand(std::vector<std::vector<int> > &grid)
+{
+	size_t m = grid.size(), n = m ? grid[0].size() : 0;
+	int area = 0;
+	for (int i = 0; i < m; ++i) {
+		for (int j = 0; j < n; j++) {
+			if (!grid[i][j]) {
+				continue;
+			}
+			std::queue<std::pair<int, int> > island;
+			island.push({i, j});
+			int local_area = 0;
+			while (!island.empty()) {
+				auto [r, c] = island.front();
+				island.pop();
+				if (!grid[r][c]) {
+					continue;
+				}
+				++local_area;
+				grid[r][c] = 0;
+				for (int k = 0; k < 4; ++k) {
+					int x = r + direction[k], y = c + direction[k + 1];
+					if (x >= 0 && x < m && y >= 0 && y < n && grid[x][y]) {
+						island.push({x, y});
+					}
+				}
+			}
+			area = std::max(area, local_area);
+		}
+	}
+	return area;
+}
+
+} // namespace queue
+} // namespace bfs
 
 } // namespace search
 } // namespace algorithm
