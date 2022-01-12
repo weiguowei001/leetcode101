@@ -135,7 +135,7 @@ dfs_3(
 int
 findCircleNum(std::vector<std::vector<int> > &friends)
 {
-	int n = friends.size(), count = 0;
+	size_t n = friends.size(), count = 0;
 	std::vector<bool> visited(n, false);
 	for (int i = 0; i < n; ++i) {
 		if (!visited[i]) {
@@ -143,7 +143,7 @@ findCircleNum(std::vector<std::vector<int> > &friends)
 			++count;
 		}
 	}
-	return count;
+	return static_cast<int>(count);
 }
 } // namespace recursive
 } // namespace dfs
