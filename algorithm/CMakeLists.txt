@@ -6,7 +6,7 @@ project(leetcode101)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Qv2ray baselib sources
+# leetcode101 sources
 include(cmake/leetcode101-search.cmake)
 include(cmake/leetcode101-sort.cmake)
 
