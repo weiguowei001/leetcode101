@@ -1,3 +1,3 @@
-[submodule "algorithm/leetcode_101"]
-	path = algorithm/leetcode_101
+[submodule "leetcode_101"]
+	path = leetcode_101
 	url = https://github.com/changgyhub/leetcode_101.git
