@@ -1,0 +1,10 @@
+set(LEETCODE101_SEARCH ${CMAKE_SOURCE_DIR}/search)
+
+set(LEETCODE101_SEARCH_SOURCES
+    ${LEETCODE101_SEARCH}/dfs.cpp
+    ${LEETCODE101_SEARCH}/dfs.hpp
+    ${LEETCODE101_SEARCH}/bfs.cpp
+    ${LEETCODE101_SEARCH}/bfs.hpp
+    ${LEETCODE101_SEARCH}/backtracking.cpp
+    ${LEETCODE101_SEARCH}/backtracking.hpp
+    )

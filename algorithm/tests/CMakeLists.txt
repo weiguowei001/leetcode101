@@ -6,7 +6,7 @@ if(NOT TARGET run_tests)
 endif()
 
 if(BUILD_TESTING)
-  set(TESTS testsearch)
+  set(TESTS search_test)
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 
   include_directories(
@@ -14,7 +14,7 @@ if(BUILD_TESTING)
   )
 
   foreach(test ${TESTS})
-    add_executable(${test} EXCLUDE_FROM_ALL ${test}.cpp ${PROJECT_SOURCE_DIR}/search/search.cpp)
+    add_executable(${test} EXCLUDE_FROM_ALL ${test}.cpp ${PROJECT_SOURCE_DIR}/search/dfs.cpp)
     add_test(NAME ${test} COMMAND ${test})
   endforeach()
 

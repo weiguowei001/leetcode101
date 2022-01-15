@@ -9,9 +9,11 @@
 #include "sort/insertion_sort/insertion_sort.hpp"
 #include "sort/bubble_sort/bubble_sort.hpp"
 #include "sort/selection_sort/selection_sort.hpp"
-#include "sort/topk.hpp"
+#include "sort/quick_selection.hpp"
+#include "sort/bucket_sort.hpp"
 
-#include "search/search.hpp"
+#include "search/dfs.hpp"
+#include "search/bfs.hpp"
 
 using namespace algorithm::sort;
 using namespace algorithm::search;
@@ -128,6 +130,7 @@ main()
 	std::cout << "Hello World\n";
 	sort();
 
-	topKFrequent(std::vector<int>{1, 1, 1, 1, 7, 7, 3}, 2);
+	std::vector<int> nums{1, 1, 1, 1, 7, 7, 3};
+	topKFrequent(nums, 2);
 	return 0;
 }

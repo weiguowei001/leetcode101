@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "search.hpp"
+#include "../search/dfs.hpp"
 
 using namespace algorithm::search;
 
