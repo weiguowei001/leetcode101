@@ -29,6 +29,24 @@ permute(std::vector<int> &nums)
 	return ans;
 }
 
+std::vector<std::vector<int> >
+combine(int n, int k)
+{
+	return {};
+}
+
+bool
+exist(std::vector<std::vector<char> > &board, std::string word)
+{
+	return false;
+}
+
+std::vector<std::vector<std::string> >
+solveNQueens(int n)
+{
+	return {};
+}
+
 } // namespace backtracking
 } // namespace search
 } // namespace algorithm
