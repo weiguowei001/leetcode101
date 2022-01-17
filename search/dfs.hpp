@@ -18,8 +18,7 @@ namespace recursive {
 int maxAreaOfIsLand_1(vector<vector<int> > &grid);
 int maxAreaOfIsLand_2(vector<vector<int> > &grid);
 int findCircleNum(vector<vector<int> > &friends);
-vector<vector<int> > pacificAtlantic(
-	vector<vector<int> > &matrix);
+vector<vector<int> > pacificAtlantic(vector<vector<int> > &matrix);
 
 } // namespace recursive
 } // namespace dfs
