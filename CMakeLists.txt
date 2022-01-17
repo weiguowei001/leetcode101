@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10.0)
 
-project(leetcode101_src)
+project(leetcode101)
 
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -16,7 +16,7 @@ set(leetcode101_SOURCES
     ${LEETCODE101_SORT_SOURCES}
     )
 
-add_executable(leetcode101_src ${leetcode101_SOURCES})
+add_executable(leetcode101 ${leetcode101_SOURCES})
 
 ###########################################################
 # TESTS

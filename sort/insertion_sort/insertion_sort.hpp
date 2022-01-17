@@ -1,10 +1,12 @@
 #pragma once
 #include <vector>
 
+using namespace std;
+
 namespace algorithm {
 namespace sort {
 
-void insertion_sort(std::vector<int> &nums, int n);
+void insertion_sort(vector<int> &nums, int n);
 
 } // namespace sort
 } // namespace algorithm

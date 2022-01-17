@@ -1,10 +1,12 @@
 #include <vector>
 
+using namespace std;
+
 namespace algorithm {
 namespace sort
 {
 
-std::vector<int> topKFrequent(std::vector<int> &nums, int k);
+vector<int> topKFrequent(vector<int> &nums, int k);
 
 } // namespace sort
 } // namespace algorithm

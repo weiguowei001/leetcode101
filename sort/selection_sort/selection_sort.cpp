@@ -6,7 +6,7 @@ namespace algorithm {
 namespace sort {
 
 void
-selection_sort(std::vector<int> &nums, int n)
+selection_sort(vector<int> &nums, int n)
 {
 	using namespace std;
 	for (int i = 0; i < n; ++i) {

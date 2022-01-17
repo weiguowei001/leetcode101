@@ -6,7 +6,7 @@ namespace algorithm {
 namespace sort {
 
 void
-insertion_sort(std::vector<int> &nums, int n)
+insertion_sort(vector<int> &nums, int n)
 {
 	using namespace std;
 	for (int i = 1; i < n; ++i) {

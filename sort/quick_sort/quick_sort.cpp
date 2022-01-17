@@ -6,7 +6,7 @@ namespace algorithm {
 namespace sort {
 
 void
-quick_sort(std::vector<int> &nums, int l, int r)
+quick_sort(vector<int> &nums, int l, int r)
 {
 	if (l + 1 >= r) {
 		return;

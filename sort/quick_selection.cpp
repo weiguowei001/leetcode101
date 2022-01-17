@@ -8,7 +8,7 @@ namespace sort {
 
 // 辅助函数 - 快速选择
 int
-quickSelection(std::vector<int> &nums, int l, int r)
+quickSelection(vector<int> &nums, int l, int r)
 {
 	using namespace std;
 	int i = l + 1, j = r;
@@ -30,7 +30,7 @@ quickSelection(std::vector<int> &nums, int l, int r)
 
 // 主函数
 int
-findKthLargest(std::vector<int> &nums, int k)
+findKthLargest(vector<int> &nums, int k)
 {
 	int l = 0, r = nums.size() - 1, target = nums.size() - k;
 	while (l < r) {

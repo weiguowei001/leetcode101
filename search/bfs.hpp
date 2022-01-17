@@ -2,12 +2,14 @@
 
 #include <vector>
 
+using namespace std;
+
 namespace algorithm {
 namespace search {
 namespace bfs {
 namespace queue {
 
-int maxAreaOfIsLand(std::vector<std::vector<int> > &grid);
+int maxAreaOfIsLand(vector<vector<int> > &grid);
 
 } // namespace queue
 } // namespace bfs

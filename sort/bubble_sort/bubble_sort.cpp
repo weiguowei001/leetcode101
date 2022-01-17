@@ -5,7 +5,7 @@ namespace algorithm {
 namespace sort {
 
 void
-bubble_sort(std::vector<int> &nums, int n)
+bubble_sort(vector<int> &nums, int n)
 {
 	using namespace std;
 	bool swapped;

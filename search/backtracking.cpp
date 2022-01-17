@@ -7,7 +7,7 @@ namespace backtracking {
 
 void
 backtracking_1(
-	std::vector<int> nums, int level, std::vector<std::vector<int> > &ans)
+	vector<int> nums, int level, vector<vector<int> > &ans)
 {
 	if (level == nums.size() - 1) {
 		ans.push_back(nums);
@@ -21,10 +21,10 @@ backtracking_1(
 	}
 }
 
-std::vector<std::vector<int> >
-permute(std::vector<int> &nums)
+vector<vector<int> >
+permute(vector<int> &nums)
 {
-	std::vector<std::vector<int> > ans;
+	vector<vector<int> > ans;
 	backtracking_1(nums, 0, ans);
 	return ans;
 }
@@ -44,7 +44,7 @@ backtracking_2(vector<vector<int> > &ans, vector<int> &comb, int &count,
 	}
 }
 
-std::vector<std::vector<int> >
+vector<vector<int> >
 combine(int n, int k)
 {
 	vector<vector<int> > ans;
@@ -78,7 +78,7 @@ backtracking_3(int i, int j, vector<vector<char> > &board, string &word,
 }
 
 bool
-exist(std::vector<std::vector<char> > &board, std::string word)
+exist(vector<vector<char> > &board, string word)
 {
 	if (board.empty())
 		return false;
@@ -117,7 +117,7 @@ backtracing_4(vector<vector<string> > &ans, vector<string> &board,
 	}
 }
 
-std::vector<std::vector<std::string> >
+vector<vector<string> >
 solveNQueens(int n)
 {
 	vector<vector<string> > ans;

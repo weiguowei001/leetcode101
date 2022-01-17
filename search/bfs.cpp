@@ -7,10 +7,10 @@ namespace search {
 namespace bfs {
 namespace queue {
 
-std::vector<int> direction{-1, 0, 1, 0, -1};
+vector<int> direction{-1, 0, 1, 0, -1};
 
 int
-maxAreaOfIsLand(std::vector<std::vector<int> > &grid)
+maxAreaOfIsLand(vector<vector<int> > &grid)
 {
 	size_t m = grid.size(), n = m ? grid[0].size() : 0;
 	int area = 0;
@@ -19,7 +19,7 @@ maxAreaOfIsLand(std::vector<std::vector<int> > &grid)
 			if (!grid[i][j]) {
 				continue;
 			}
-			std::queue<std::pair<int, int> > island;
+			std::queue<pair<int, int> > island;
 			island.push({i, j});
 			int local_area = 0;
 			while (!island.empty()) {
@@ -37,7 +37,7 @@ maxAreaOfIsLand(std::vector<std::vector<int> > &grid)
 					}
 				}
 			}
-			area = std::max(area, local_area);
+			area = max(area, local_area);
 		}
 	}
 	return area;
