@@ -12,7 +12,6 @@ backtracking_1(vector<int> &nums, int level, vector<vector<int> > &ans)
 		ans.push_back(nums);
 		return;
 	}
-	using namespace std;
 	for (int i = level; i < nums.size(); ++i) {
 		swap(nums[i], nums[level]);			  // 修改当前节点状态
 		backtracking_1(nums, level + 1, ans); // 递归子节点
