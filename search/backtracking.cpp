@@ -6,7 +6,7 @@ namespace search {
 namespace backtracking {
 
 void
-backtracking_1(vector<int> nums, int level, vector<vector<int> > &ans)
+backtracking_1(vector<int> &nums, int level, vector<vector<int> > &ans)
 {
 	if (level == nums.size() - 1) {
 		ans.push_back(nums);
