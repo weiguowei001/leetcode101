@@ -35,7 +35,7 @@ backtracking_2(vector<vector<int> > &ans, vector<int> &comb, int &count,
 		ans.push_back(comb);
 		return;
 	}
-	for (int i = 0; i < n; ++i) {
+	for (int i = pos; i <= n; ++i) {
 		comb[count++] = i; // 修改当前节点状态
 		backtracking_2(ans, comb, count, i + 1, n, k); // 递归子节点
 		--count; // 回改当前节点状态
