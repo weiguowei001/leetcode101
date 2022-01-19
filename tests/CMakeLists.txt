@@ -14,7 +14,11 @@ if(BUILD_TESTING)
   )
 
   foreach(test ${TESTS})
-    add_executable(${test} EXCLUDE_FROM_ALL ${test}.cpp ${PROJECT_SOURCE_DIR}/search/dfs.cpp)
+    add_executable(${test} EXCLUDE_FROM_ALL 
+      ${test}.cpp 
+      ${PROJECT_SOURCE_DIR}/search/dfs.cpp
+      ${PROJECT_SOURCE_DIR}/search/backtracking.cpp
+      )
     add_test(NAME ${test} COMMAND ${test})
   endforeach()
 
