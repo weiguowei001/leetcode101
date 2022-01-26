@@ -17,7 +17,7 @@ set(leetcode101_SOURCES
     )
 
 add_executable(leetcode101 ${leetcode101_SOURCES})
-
+target_precompile_headers(leetcode101 PRIVATE ${CMAKE_CURRENT_LIST_DIR}/precompiledheader.h)
 ###########################################################
 # TESTS
 ###########################################################
