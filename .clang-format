@@ -1,63 +1,211 @@
 ---
-Language:          Cpp
-BasedOnStyle:      LLVM
-
+Language:        Cpp
+# 访问说明符(public、private等)的偏移
 AccessModifierOffset: -4
-
+# 开括号(开圆括号、开尖括号、开方括号)后的对齐: Align, DontAlign, AlwaysBreak(总是在开括号后换行)
 AlignAfterOpenBracket: DontAlign
-AlignEscapedNewlinesLeft: true
-#AlignOperands : true
+# 宏定义对齐
+AlignConsecutiveMacros: true
+# 等号对齐
+AlignConsecutiveAssignments: false
+# 申明变量名对齐
+AlignConsecutiveDeclarations: false
+# 对齐换行反斜杠
+AlignEscapedNewlines: Right
+# 运算符对齐
+AlignOperands:   true
+# 对齐行尾注释
 AlignTrailingComments: true
-
-AllowAllParametersOfDeclarationOnNextLine: true
-AllowShortBlocksOnASingleLine: false
+# 允许实参换行
+AllowAllArgumentsOnNextLine: false
+# 允许形参换行
+AllowAllParametersOfDeclarationOnNextLine: false
+# 允许构造函数换行
+AllowAllConstructorInitializersOnNextLine: false
+# 允许短的块放在同一行
+AllowShortBlocksOnASingleLine: Never
+# 允许短的case标签放在同一行
 AllowShortCaseLabelsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: All
-AllowShortIfStatementsOnASingleLine: false
+# 允许短的枚举放在同一行
+AllowShortEnumsOnASingleLine: false
+# 允许短的函数放在同一行
+AllowShortFunctionsOnASingleLine: None
+# 允许短的Lambda放在同一行
+AllowShortLambdasOnASingleLine: Empty
+# 允许短的if语句保持在同一行
+AllowShortIfStatementsOnASingleLine: Never
+# 允许短的循环保持在同一行
 AllowShortLoopsOnASingleLine: false
-
-AlwaysBreakAfterDefinitionReturnType: All
-AlwaysBreakBeforeMultilineStrings: false
-AlwaysBreakTemplateDeclarations: false
-
-#BinPackArguments : false
-#BinPackParameters : true
-
-BreakBeforeBinaryOperators: false
+# 定义函数返回类型之后换行
+AlwaysBreakAfterDefinitionReturnType: false
+# 总是在返回类型后换行
+AlwaysBreakAfterReturnType: None
+# 模板定义后换行
+AlwaysBreakTemplateDeclarations: MultiLine
+# 允许多个实参在同一行
+BinPackArguments: true
+# 允许多个形参在同一行
+BinPackParameters: true
+# 大括号换行，只有当BreakBeforeBraces设置为Custom时才有效
+BraceWrapping:
+  AfterCaseLabel:  true
+  AfterClass:      true
+  AfterControlStatement: Always
+  AfterEnum:       true
+  AfterFunction:   true
+  AfterNamespace:  true
+  AfterObjCDeclaration: true
+  AfterStruct:     true
+  AfterUnion:      true
+  AfterExternBlock: true
+  BeforeCatch:     true
+  BeforeElse:      true
+  IndentBraces:    false
+  BeforeLambdaBody: true
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+# 在二元运算符前换行
+BreakBeforeBinaryOperators: None
+# 在括号前换行
 BreakBeforeBraces: Custom
-BraceWrapping: { AfterFunction: true }
+# 继承列表样式
+BreakInheritanceList: BeforeComma
+# 在三元运算符前换行
 BreakBeforeTernaryOperators: true
-BreakConstructorInitializersBeforeComma: true
-
-ColumnLimit:     80
-
+# 构造函数初始化列表样式
+BreakConstructorInitializers: BeforeComma
+# 字符串换行
+BreakStringLiterals: true
+# 行最大字符数
+ColumnLimit:     90
+# 不换行注释正则
+CommentPragmas:  '^ pragma:'
+# 连续命名空间不换行
+CompactNamespaces: false
+# 构造函数的初始化列表要么都在同一行，要么都各自一行
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+# 构造函数的初始化列表的缩进宽度
+ConstructorInitializerIndentWidth: 4
+# 延续的行的缩进宽度
 ContinuationIndentWidth: 4
-
-DerivePointerAlignment: false #XXX
+# 去除C++11的列表初始化的大括号{后和}前的空格
+Cpp11BracedListStyle: true
+# 分析最常用的行尾（CRLF、LF）
+DeriveLineEnding: true
+# 分析最常用的指针对齐方式
+DerivePointerAlignment: false
+# 禁用格式化
 DisableFormat:   false
-ExperimentalAutoDetectBinPacking: false #XXX
-ForEachMacros:   [ LIST_FOREACH, SIMPLEQ_FOREACH, CIRCLEQ_FOREACH, TAILQ_FOREACH, TAILQ_FOREACH_REVERSE, HT_FOREACH ]
-
+# 自动检测函数的调用和定义是否被格式为每行一个参数
+ExperimentalAutoDetectBinPacking: true
+# 命名空间注释
+FixNamespaceComments: true
+# 需要被解读为foreach循环而不是函数调用的宏
+ForEachMacros:
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+# 对#include进行排序，匹配了某正则表达式的#include拥有对应的优先级，匹配不到的则默认优先级为INT_MAX(优先级越小排序越靠前)，
+IncludeBlocks:   Regroup
+IncludeCategories:
+  - Regex:           '^"(llvm|llvm-c|clang|clang-c)/'
+    Priority:        2
+    SortPriority:    0
+  - Regex:           '^(<|"(gtest|gmock|isl|json)/)'
+    Priority:        3
+    SortPriority:    0
+  - Regex:           '.*'
+    Priority:        1
+    SortPriority:    0
+# 原文件名称
+IncludeIsMainRegex: '(Test)?$'
+# 源文件名称
+IncludeIsMainSourceRegex: 'Impl\.hpp'
+# Case标签缩进
 IndentCaseLabels: false
-IndentFunctionDeclarationAfterType: false
+# Goto标签缩进
+IndentGotoLabels: true
+# 预处理指令缩进
+IndentPPDirectives: BeforeHash
+# 缩进宽度
 IndentWidth:     4
+# 函数返回类型换行时，缩进函数声明或函数定义的函数名
 IndentWrappedFunctionNames: false
-
-KeepEmptyLinesAtTheStartOfBlocks: true
-MaxEmptyLinesToKeep: 2
-
-PointerAlignment: Right #XXX
-
-#SpaceAfterCStyleCast : false
-SpaceBeforeAssignmentOperators: true
-SpaceBeforeParens: ControlStatements
-SpaceInEmptyParentheses: false
-SpacesBeforeTrailingComments: 1
-SpacesInAngles:  false
-SpacesInCStyleCastParentheses: false
-SpacesInParentheses: false
-Standard:        Cpp03
-TabWidth:        4
-UseTab:          Always
+# 保留块开始处的空白
+KeepEmptyLinesAtTheStartOfBlocks: false
+# 匹配块开始处的正则表达式
+MacroBlockBegin: ''
+# 匹配快结束处的正则表达式
+MacroBlockEnd:   ''
+# 最大连续空行数
+MaxEmptyLinesToKeep: 1
+# 命名空间的缩进方式
+NamespaceIndentation: All
+# 违法规则的惩罚值
+PenaltyBreakAssignment: 2
+PenaltyBreakBeforeFirstCallParameter: 19
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakString: 1000
+PenaltyBreakTemplateDeclaration: 10
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 60
+# 指针对齐方式
+PointerAlignment: Right
+# 允许重新排版注释
+ReflowComments:  true
+# 允许排序#include
 SortIncludes:    false
+# 允许排序using
+SortUsingDeclarations: true
+# 在C风格类型转换后添加空格
+SpaceAfterCStyleCast: false
+# 在逻辑取反运算符后添加空格
+SpaceAfterLogicalNot: false
+# template后添加空格
+SpaceAfterTemplateKeyword: true
+# 等号前添加空格
+SpaceBeforeAssignmentOperators: true
+# C++11初始化块前添加空格
+SpaceBeforeCpp11BracedList: true
+# 在构造函数初始值设定项冒号添加空格
+SpaceBeforeCtorInitializerColon: true
+# 在继承项冒号前添加空格
+SpaceBeforeInheritanceColon: true
+# 括号前添加空格
+SpaceBeforeParens: Never
+# 范围循环中冒号前添加空格
+SpaceBeforeRangeBasedForLoopColon: true
+# 空块中添加空格
+SpaceInEmptyBlock: true
+# 空圆括号中添加空格
+SpaceInEmptyParentheses: false
+# 行尾注释前的空格数
+SpacesBeforeTrailingComments: 1
+# 模板尖括号<>中添加空格
+SpacesInAngles:  false
+# C样式强制类型转换括号中添加空格
+SpacesInCStyleCastParentheses: false
+# 控制流中圆括号中添加空格
+SpacesInConditionalStatement: false
+# 容器中添加空格
+SpacesInContainerLiterals: true
+# 圆括号中添加空格
+SpacesInParentheses: false
+# 在方括号中插入空格，没有参数或未指定大小数组声明的Lambda不会受到影响。
+SpacesInSquareBrackets: false
+# 在方括号前添加空格，lambda不受影响
+SpaceBeforeSquareBrackets: false
+# c++标准
+Standard:        Cpp11
+# 宏的向量，应将其解释为完整的语句。
+StatementMacros:
+  - Q_UNUSED
+  - QT_REQUIRE_VERSION
+# tab宽度
+TabWidth:        8
+# 使用Tab
+UseTab:          Never
 ...
+
