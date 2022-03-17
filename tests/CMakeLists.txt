@@ -30,3 +30,5 @@ if(BUILD_TESTING)
 
   add_dependencies(run_tests check)
 endif()
+
+add_subdirectory(dp_test)
