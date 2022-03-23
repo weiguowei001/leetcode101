@@ -1,3 +1,5 @@
+#pragma warning( push )
+#pragma warning( disable : 4267)
 
 #include "two_dimensional.hpp"
 #include <numeric>
@@ -293,3 +295,4 @@ maxProfit(vector<int> &prices)
 
 } // namespace dp
 } // namespace algorithm
+#pragma warning( pop )

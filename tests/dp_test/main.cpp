@@ -16,5 +16,6 @@ main()
 
 	vector<string> strs{"10", "0001", "111001", "1", "0"};
 	findMaxForm(strs, 5, 3);
+	isMatch("aab", "c*a*b");
 	return 0;
 }

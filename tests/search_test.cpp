@@ -25,6 +25,6 @@ main()
 		{1, 0, 0, 0, 1}, {1, 1, 1, 1, 1}};
 	bfs::queue::shortestBridge(grid);
 	vector<string> wordList{"hot", "dot", "dog", "lot", "log", "cog"};
-	bfs::queue::findLadders("hit", "dog", wordList);
+	auto ans = bfs::queue::findLadders("hit", "cog", wordList);
 	return 0;
 }
