@@ -175,7 +175,8 @@ findLadders(string beginWord, string endWord, vector<string> &wordList)
 		}
 	}
 	if (found) {
-		vector<string> path{beginWord};
+		vector<string> path = {beginWord};
+		backtracking_3(beginWord, endWord, next, path, ans);
 	}
 	return ans;
 }
