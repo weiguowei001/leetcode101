@@ -1,5 +1,5 @@
-#pragma warning( push )
-#pragma warning( disable : 4267)
+﻿#pragma warning(push)
+#pragma warning(disable : 4267)
 
 #include "two_dimensional.hpp"
 #include <numeric>
@@ -218,13 +218,22 @@ isMatch(string s, string p)
 	for (int i = 1; i < m + 1; ++i) {
 		for (int j = 1; j < n + 1; ++j) {
 			if (p[j - 1] == '.') {
+				// p[j - 1] == '*'
 				dp[i][j] = dp[i - 1][j - 1];
 			} else if (p[j - 1] != '*') {
+				// p[j - 1] != '*'
 				dp[i][j] = dp[i - 1][j - 1] && p[j - 1] == s[i - 1];
 			} else if (p[j - 2] != s[i - 1] && p[j - 2] != '.') {
+				// p[j - 1] == '*'
+				// 匹配0次: dp[i][j - 2]
 				dp[i][j] = dp[i][j - 2];
 			} else {
+				// p[j - 1] == '*'
+				// 匹配0次: dp[i][j - 2]
+				// 匹配1次: dp[i - 1][j]
+				// dp[i][j - 1]
 				dp[i][j] = dp[i][j - 1] || dp[i - 1][j] || dp[i][j - 2];
+				// dp[i][j] = dp[i - 1][j];
 			}
 		}
 	}
@@ -275,7 +284,7 @@ maxProfit_2(int k, vector<int> &prices)
 }
 
 int
-maxProfit(vector<int> &prices)
+maxProfit_3(vector<int> &prices)
 {
 	int n = prices.size();
 	if (n == 0) {
@@ -295,4 +304,4 @@ maxProfit(vector<int> &prices)
 
 } // namespace dp
 } // namespace algorithm
-#pragma warning( pop )
+#pragma warning(pop)

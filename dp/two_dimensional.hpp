@@ -32,7 +32,7 @@ bool isMatch(string s, string p);
 // 股票交易
 int maxProfit_1(vector<int> &prices);
 int maxProfit_2(int k, vector<int> &prices);
-int maxProfit(vector<int> &prices);
+int maxProfit_3(vector<int> &prices);
 
 } // namespace dp
 } // namespace algorithm

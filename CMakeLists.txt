@@ -10,12 +10,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 include(cmake/leetcode101-search.cmake)
 include(cmake/leetcode101-sort.cmake)
 include(cmake/leetcode101-dp.cmake)
+include(cmake/leetcode101-str.cmake)
+
 
 set(leetcode101_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/main.cpp
     ${LEETCODE101_SEARCH_SOURCES}
     ${LEETCODE101_SORT_SOURCES}
     ${LEETCODE101_DP_SOURCES}
+    ${LEETCODE101_STR_SOURCES}
     )
 
 add_executable(leetcode101 ${leetcode101_SOURCES})

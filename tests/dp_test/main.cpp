@@ -16,6 +16,8 @@ main()
 
 	vector<string> strs{"10", "0001", "111001", "1", "0"};
 	findMaxForm(strs, 5, 3);
-	isMatch("aab", "c*a*b");
+	isMatch("aab", "c*d*.*");
+	vector<int> prices{7, 1, 5, 3, 6, 4};
+	maxProfit_1(prices);
 	return 0;
 }

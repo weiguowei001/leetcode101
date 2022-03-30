@@ -15,9 +15,12 @@
 #include "search/dfs.hpp"
 #include "search/bfs.hpp"
 
+#include "str/string_search.hpp"
+
 using namespace std;
 using namespace algorithm::sort;
 using namespace algorithm::search;
+using namespace algorithm::str;
 
 #define PRINT                                                         \
 	copy(nums.begin(), nums.end(), ostream_iterator<int>(cout, " ")); \
@@ -130,5 +133,7 @@ main()
 
 	vector<int> nums{1, 1, 1, 1, 7, 7, 3};
 	topKFrequent(nums, 2);
+
+	strStr("", "");
 	return 0;
 }
