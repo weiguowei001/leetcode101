@@ -1,0 +1,6 @@
+set(LEETCODE101_DC ${CMAKE_SOURCE_DIR}/dc)
+
+set(LEETCODE101_DC_SOURCES
+    ${LEETCODE101_DC}/dc.cpp
+    ${LEETCODE101_DC}/dc.hpp
+    )
