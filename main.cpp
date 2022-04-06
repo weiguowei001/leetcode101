@@ -16,11 +16,17 @@
 #include "search/bfs.hpp"
 
 #include "str/string_search.hpp"
+#include "tree/trie.hpp"
+
+#include "ds/stack_queue.hpp"
 
 using namespace std;
 using namespace algorithm::sort;
 using namespace algorithm::search;
 using namespace algorithm::str;
+using namespace algorithm::tree;
+using namespace algorithm::tree::trie;
+using namespace algorithm::ds;
 
 #define PRINT                                                         \
 	copy(nums.begin(), nums.end(), ostream_iterator<int>(cout, " ")); \
@@ -134,6 +140,16 @@ main()
 	vector<int> nums{1, 1, 1, 1, 7, 7, 3};
 	topKFrequent(nums, 2);
 
-	strStr("", "");
+	strStr("ssssssssssssssb", "ssb");
+	strStr("ssssssssssssssb", "ababc");
+
+	Trie trie = Trie();
+	trie.insert("apple");
+	trie.search("apple");	// true
+	trie.search("app");		// false
+	trie.startsWith("app"); // true
+	trie.insert("app");
+	trie.search("app");
+	isValid("{{[[({({[]})})}}");
 	return 0;
 }

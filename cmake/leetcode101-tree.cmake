@@ -1,0 +1,7 @@
+set(LEETCODE101_TREE ${CMAKE_SOURCE_DIR}/tree)
+
+set(LEETCODE101_TREE_SOURCES
+    ${LEETCODE101_TREE}/tree.cpp
+    ${LEETCODE101_TREE}/tree.hpp
+    ${LEETCODE101_TREE}/trie.hpp
+    )
