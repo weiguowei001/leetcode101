@@ -14,7 +14,6 @@ include(cmake/leetcode101-str.cmake)
 include(cmake/leetcode101-tree.cmake)
 include(cmake/leetcode101-ds.cmake)
 
-
 set(leetcode101_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/main.cpp
     ${LEETCODE101_SEARCH_SOURCES}
@@ -32,3 +31,5 @@ target_precompile_headers(leetcode101 PRIVATE ${CMAKE_CURRENT_LIST_DIR}/precompi
 ###########################################################
 
 add_subdirectory(tests)
+
+# TODO: install

@@ -1,6 +1,8 @@
 include(CTest)
 
+# TODO: test macro
 # catkin compatibility
+
 if(NOT TARGET run_tests)
   add_custom_target(run_tests)
 endif()

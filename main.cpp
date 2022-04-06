@@ -19,6 +19,8 @@
 #include "tree/trie.hpp"
 
 #include "ds/stack_queue.hpp"
+#include "ds/my_queue.hpp"
+#include "ds/min_stack.hpp"
 
 using namespace std;
 using namespace algorithm::sort;
@@ -140,16 +142,52 @@ main()
 	vector<int> nums{1, 1, 1, 1, 7, 7, 3};
 	topKFrequent(nums, 2);
 
-	strStr("ssssssssssssssb", "ssb");
-	strStr("ssssssssssssssb", "ababc");
+	{
+		strStr("ssssssssssssssb", "ssb");
+		strStr("ssssssssssssssb", "ababc");
+	}
 
-	Trie trie = Trie();
-	trie.insert("apple");
-	trie.search("apple");	// true
-	trie.search("app");		// false
-	trie.startsWith("app"); // true
-	trie.insert("app");
-	trie.search("app");
-	isValid("{{[[({({[]})})}}");
+	{
+		Trie trie = Trie();
+		trie.insert("apple");
+		trie.search("apple");	// true
+		trie.search("app");		// false
+		trie.startsWith("app"); // true
+		trie.insert("app");
+		auto r = trie.search("applea");
+		isValid("{{[[({({[]})})}}");
+	}
+
+	{
+		MyQueue queue = MyQueue();
+		queue.push(1);
+		queue.push(2);
+		queue.push(3);
+		queue.pop();
+		queue.push(4);
+		queue.push(5);
+		queue.push(6);
+		queue.pop();
+		queue.pop();
+		queue.pop();
+		queue.pop();
+		queue.pop();
+		queue.empty();
+	}
+
+	{
+		MinStack minStack = MinStack();
+		minStack.push(-2);
+		minStack.push(0);
+		minStack.push(1);
+		minStack.push(-3);
+		minStack.getMin(); // Returns -3.
+		minStack.pop();
+		minStack.top();	   // Returns 1.
+		minStack.getMin(); // Returns -2.
+		minStack.pop();
+		minStack.pop();
+		minStack.getMin(); // Returns -2.
+	}
 	return 0;
 }
